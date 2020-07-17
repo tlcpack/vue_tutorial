@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Vue Tutorial</title>
     <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />   
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
 
   <body>
@@ -14,9 +14,26 @@
     </div>
 
     <div id="app-2">
-        <span v-bind:title="message">
-            Hover over me for a few seconds to see my dynamically bound title!
-        </span>
+      <span v-bind:title="message">
+        Hover over me for a few seconds to see my dynamically bound title!
+      </span>
+    </div>
+
+    <div id="app-3">
+      <span v-if="seen">Now you see me</span>
+    </div>
+
+    <div id="app-4">
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+    </div>
+
+    <div id="app-5">
+      <p>{{ message }}</p>
+      <button v-on:click="reverseMessage">Reverse Message</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
