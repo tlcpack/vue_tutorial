@@ -64,3 +64,37 @@ var app7 = new Vue({
         ]
     }
 })
+
+var vm  = new Vue({
+    el: "#example",
+    data: {
+        message: 'Booger'
+    },
+    computed: {
+        reversedMessage: function () {
+            return this.message.split('').reverse().join('')
+        }
+    }
+})
+
+var example1 = new Vue({
+    el: '#example-1',
+    data: {
+        parentMessage: 'Parent',
+        items: [
+            { message: 'Foo' },
+            { message: 'Bar' }
+      ]
+    }
+  })
+
+  Vue.component('button-counter', {
+    data: function () {
+      return {
+        count: 0
+      }
+    },
+    template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
+  })
+
+  new Vue({ el: '#components-demo' })
